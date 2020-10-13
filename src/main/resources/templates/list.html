@@ -39,33 +39,34 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">회원가</a></li>
+                <li><a href="list.html">회원 목록</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 <h1>test</h1>
 <div class="container">
-    <form action="/create" method="post">
-        <div class="form-group">
-            <label for="userId">id</label>
-            <input type="text" class="form-control" name="userId" placeholder="userId">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <label for="name">이름</label>
-            <input type="text" class="form-control" name="name" placeholder="name">
-        </div>
-        <div class="form-group">
-            <label for="email">email</label>
-            <input type="email" class="form-control" name="email" placeholder="email">
-        </div>
 
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+    <table class="table table-condensed">
+
+        <thead>
+
+        <tr>
+            <th>id</th>
+            <th>이름</th>
+            <th>이메일</th>
+        </tr>
+        </thead>
+        {{#users}}
+        <tr>
+            <th scope="row"> {{userId}}</th>
+            <td>{{name}}</td>
+            <td>{{email}}</td>
+        </tr>
+        {{/users}}
+
+
+    </table>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="/webjars/jquery/3.0.0/jquery.min.js"></script>
